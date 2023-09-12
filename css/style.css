@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, rgb(205, 225, 176), rgb(139, 220, 236));
+    display: flex;
+    justify-content: center;
+    align-items: center !important;
+    height: 100vh;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.container {
+    border: 1px solid black;
+    padding: 20px;
+    width: 400px;
+    border-radius: 20px 0 20px 0;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+    text-align: center;
+    background-image: linear-gradient(to right, rgb(205, 225, 176), rgb(139, 220, 236));
+    max-height: 95vh;
+    overflow-y: auto;
+}
+
+.container .child1 input {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    padding-inline: 10px;
+    height: 30px;
+    border: 1px solid black;
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
+    font-size: 16px;
+
+
+}
+
+.container .plus-minus {
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+}
+
+
+.container .plus-minus .btn {
+    height: 35px;
+    cursor: pointer;
+    width: 35px;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+
+.container .btn.plus {
+    background: #198754;
+    color: white;
+}
+
+.container .btn.minus {
+    background: crimson;
+    color: white;
+}
+
+.container .child1 button[type=submit] {
+    width: 100%;
+    margin-top: 10px;
+    background: #198754;
+    height: 40px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: none;
+    font-size: 20px;
+    color: white;
+    transition: all 0.5s;
+}
+
+.container .child1 button:hover {
+    background-color: rgb(74, 72, 72);
+}
+
+.container .child1 label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+    font-size: 20px;
+    color: rgb(17, 69, 90);
+}
+
+.container .child1 a {
+    color: darkblue;
+    /* padding: 10px; */
+}
+
+.error,
+.success {
+    text-align: right;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.error {
+    color: crimson;
+}
+
+.success {
+    color: #198754;
+}

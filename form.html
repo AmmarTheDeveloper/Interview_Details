@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <form id="form">
+            <div class="child1">
+                <label for="name">Enter Your name</label>
+                <input type="text" id="name" required name="Candidate_Name">
+                <label for="Company_Name"> Enter Hr Company name </label>
+                <input type="text" id="Company_Name" required name="Company_Name">
+                <label for="Hr_Name">Hr Name</label>
+                <input type="text" id="Hr_Name" required name="Hr_Name">
+                <label for="Hr_No">Hr Number</label>
+                <input type="text" id="Hr_Number" required name="Hr_Number">
+                <label for="date">Date of Interview</label>
+                <input type="date" id="date" name="Date_Of_Interview">
+                <label for="address">Company Address</label>
+                <input type="text" id="address" name="Company_Address">
+                <label for="Interview_questions">
+                    Interview Questions
+                </label>
+                <div class="interview-questions-container">
+                    <input type="text" id="Interview_questions" class="interview-question">
+                </div>
+                <div class="plus-minus">
+                    <button type="button" class="btn minus">
+                        <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn plus">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+                <p class="error"></p>
+                <p class="success"></p>
+                <button type="submit"> submit</button>
+                <a href="admin.html">See Detail</a>
+            </div>
+        </form>
+    </div>
+    <script src="./javascript/send-data.js"></script>
+</body>
+
+</html>

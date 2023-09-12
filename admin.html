@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>
+        Hr Detail
+    </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: white;
+        }
+
+        .container {
+            margin: 0;
+            max-width: 100%;
+            overflow-x: auto;
+            padding: 0;
+        }
+
+        table {
+            text-align: center;
+        }
+
+        table tr {
+            vertical-align: middle;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <table class="table table-striped">
+            <thead class="table-light">
+                <tr class="hr">
+                    <th>Sr_No</th>
+                    <th>Date</th>
+                    <th>Candidate_Name</th>
+                    <th>Company_Name</th>
+                    <th>Hr_Name</th>
+                    <th>Hr_Number</th>
+                    <th>Date_Of_Interview</th>
+                    <th>Company_Address</th>
+                    <th>Interview_Questions</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+                <!-- <% data.forEach((value , index)=>{ %>
+                <tr>
+                    <td>
+                        <%= index + 1 %>
+                    </td>
+                    <td>
+                        <%= value.Date %>
+                    </td>
+                    <td>
+                        <%= value.Candidate_Name %>
+                    </td>
+                    <td>
+                        <%= value.Company_Name %>
+                    </td>
+                    <td>
+                        <%= value.Hr_Name %>
+                    </td>
+                    <td>
+                        <%= value.Hr_Number %>
+                    </td>
+                    <td>
+                        <%= value.Date_Of_Interview %>
+                    </td>
+                    <td>
+                        <%= value.Company_Address %>
+                    </td>
+                    <td>
+                        <%= value.Interview_Questions %>
+                    </td>
+                </tr>
+                <% }) %> -->
+
+            </tbody>
+        </table>
+        <script src="./javascript/getSheetData.js"></script>
+        <script src="./javascript/getSheetData2.js"></script>
+        <script src="./javascript/displaySheetData.js"></script>
+    </div>
+</body>
+
+</html>
