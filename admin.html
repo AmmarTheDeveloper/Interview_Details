@@ -62,10 +62,16 @@
         .error {
             display: none;
         }
+
+        .navbar {
+            box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.5);
+        }
     </style>
 </head>
 
 <body>
+
+
 
     <div class="form-container d-flex justify-content-center align-items-center" id="form-container">
 
@@ -96,7 +102,21 @@
 
     </div>
 
+
+
+
     <div class="container table-container">
+        <div class="navbar mb-3 px-5 bg-light d-flex justify-content-between align-items-center">
+            <div class="navbar-brand fs-4">
+                TechSkills
+            </div>
+            <div class="text-end ">
+                <button type="button" class="btn btn-danger logout">
+                    Logout
+                </button>
+            </div>
+        </div>
+
         <table class="table table-striped">
             <thead class="table-light">
                 <tr class="hr">
@@ -149,24 +169,41 @@
             </tbody>
         </table>
 
+
+
         <script>
             const formContainer = document.querySelector( '#form-container' )
             const form = document.querySelector( '.form-container form' )
             const error = document.querySelector( '.form-container .error' )
             const tableContainer = document.querySelector( '.table-container' )
+            const logoutBtn = document.querySelector( '.logout' )
 
-            form.onsubmit = ( e ) => {
-                e.preventDefault()
-                let username = document.querySelector( '#name' )
-                let password = document.querySelector( '#password' )
-                if ( username.value == 'techskills' && password.value == 'tsis@123' ) {
-                    formContainer.classList.add( 'hide' )
-                    tableContainer.classList.add( 'active' )
-                    error.style.display = 'none !important'
-                } else {
-                    error.style.display = 'block'
-                    error.innerText = 'Please Enter Valid Credentials'
+            logoutBtn.onclick = () => {
+                localStorage.removeItem( 'loggedIn' )
+                location.reload()
+            }
+            if ( localStorage.getItem( 'loggedIn' ) != 'true' ) {
+
+
+                form.onsubmit = ( e ) => {
+                    e.preventDefault()
+                    let username = document.querySelector( '#name' )
+                    let password = document.querySelector( '#password' )
+                    if ( username.value == 'techskills' && password.value == 'tsis@123' ) {
+                        formContainer.classList.add( 'hide' )
+                        tableContainer.classList.add( 'active' )
+                        error.style.display = 'none !important'
+                        localStorage.setItem( 'loggedIn', true )
+                    } else {
+                        error.style.display = 'block'
+                        error.innerText = 'Please Enter Valid Credentials'
+                    }
+
                 }
+            } else {
+
+                formContainer.classList.add( 'hide' )
+                tableContainer.classList.add( 'active' )
 
             }
         </script>
