@@ -35,11 +35,68 @@
             vertical-align: middle;
 
         }
+
+        form {
+            width: 400px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        .form-container {
+            min-height: 100vh;
+        }
+
+        .form-container.hide {
+            display: none !important;
+        }
+
+        .table-container {
+            display: none;
+        }
+
+        .table-container.active {
+            display: block;
+        }
+
+        .error {
+            display: none;
+        }
     </style>
 </head>
 
 <body>
-    <div class="container">
+
+    <div class="form-container d-flex justify-content-center align-items-center" id="form-container">
+
+        <form class="form" action="">
+            <h4 class="text-center">
+                Login As Admin
+            </h4>
+
+            <div class="my-2">
+                <label for="" class="form-label">
+                    Enter username :
+                </label>
+                <input type="text" id="name" class="form-control">
+            </div>
+
+            <div class="my-2">
+                <label for="">
+                    Enter your password :
+                </label>
+                <input type="password" id="password" class="form-control">
+            </div>
+            <div class="alert alert-danger error">
+            </div>
+            <div class="text-center">
+                <button class="btn  mt-3 btn-success">Login</button>
+            </div>
+        </form>
+
+    </div>
+
+    <div class="container table-container">
         <table class="table table-striped">
             <thead class="table-light">
                 <tr class="hr">
@@ -91,6 +148,28 @@
 
             </tbody>
         </table>
+
+        <script>
+            const formContainer = document.querySelector( '#form-container' )
+            const form = document.querySelector( '.form-container form' )
+            const error = document.querySelector( '.form-container .error' )
+            const tableContainer = document.querySelector( '.table-container' )
+
+            form.onsubmit = ( e ) => {
+                e.preventDefault()
+                let username = document.querySelector( '#name' )
+                let password = document.querySelector( '#password' )
+                if ( username.value == 'techskills' && password.value == 'tsis@123' ) {
+                    formContainer.classList.add( 'hide' )
+                    tableContainer.classList.add( 'active' )
+                    error.style.display = 'none !important'
+                } else {
+                    error.style.display = 'block'
+                    error.innerText = 'Please Enter Valid Credentials'
+                }
+
+            }
+        </script>
         <script src="./javascript/getSheetData.js"></script>
         <script src="./javascript/getSheetData2.js"></script>
         <script src="./javascript/displaySheetData.js"></script>
